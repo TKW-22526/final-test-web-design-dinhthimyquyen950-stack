@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Beauty - Mỹ phẩm & chăm sóc da chính hãng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="loader" id="loader">
+      <div class="loader-ring"></div>
+      <span>Bloom Beauty</span>
+    </div>
+    <header class="site-header" id="siteHeader">
+      <div class="topbar">Freeship tu 499K - Hang chinh hang 100% - Doi tra trong 7 ngay</div>
+      <nav class="navbar container">
+        <a class="logo" href="index.html">
+          <i class="fa-solid fa-spa"></i>
+          <span>Bloom Beauty</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Mo menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li>
+            <a href="index.html">Trang chủ</a>
+          </li>
+          <li>
+            <a href="html/san-pham.html">Sản phẩm</a>
+          </li>
+          <li>
+            <a href="index.html#categories">Danh mục</a>
+          </li>
+          <li>
+            <a href="index.html#flash-sale">Khuyến mãi</a>
+          </li>
+          <li>
+            <a href="index.html#blog">Blog</a>
+          </li>
+          <li>
+            <a href="html/gioi-thieu.html">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="html/lien-he.html">Liên hệ</a>
+          </li>
+        </ul>
+        <form class="search-box" data-search-form>
+          <input type="search" placeholder="Tim serum, son, kem duong..." data-search-input>
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <div class="header-actions">
+          <button class="icon-btn" id="darkModeToggle" title="Dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a class="icon-btn" href="html/tai-khoan.html" title="Tai khoan">
+            <i class="fa-regular fa-user"></i>
+          </a>
+          <a class="icon-btn count-link" href="html/yeu-thich.html" title="Yeu thich">
+            <i class="fa-regular fa-heart"></i>
+            <span data-wishlist-count>0</span>
+          </a>
+          <a class="icon-btn count-link" href="html/gio-hang.html" title="Gio hang">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span data-cart-count>0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-slider" id="heroSlider">
+          <article class="hero-slide active" style="--bg:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1600&q=80')">
+            <div class="container hero-content" data-aos="fade-up">
+              <span class="eyebrow">New season glow</span>
+              <h1>Bloom Beauty</h1>
+              <p>My pham va cham soc da chinh hang, thanh phan lanh tinh, uu dai moi ngay cho lan da sang min.</p>
+              <div class="hero-buttons">
+                <a class="btn primary ripple" href="html/san-pham.html">Mua ngay</a>
+                <a class="btn ghost ripple" href="#categories">Khám phá</a>
+              </div>
+            </div>
+          </article>
+          <article class="hero-slide" style="--bg:url('https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1600&q=80')">
+            <div class="container hero-content">
+              <span class="eyebrow">Flash sale den nua dem</span>
+              <h1>Routine xinh, gia diu</h1>
+              <p>Giam toi 45% cac combo serum, kem duong va chong nang duoc yeu thich nhat.</p>
+              <div class="hero-buttons">
+                <a class="btn primary ripple" href="#flash-sale">ản phẩm</a>
+                <a class="btn ghost ripple" href="html/san-pham.html">Xem sản phẩm</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="slider-dots" id="heroDots">
+        </div>
+      </section>
+      <section class="section container" id="categories">
+        <div class="section-heading" data-aos="fade-up">
+          <span>Danh muc</span>
+          <h2>Chon nhanh theo nhu cau</h2>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+        </div>
+      </section>
+      <section class="section container">
+        <div class="section-heading" data-aos="fade-up">
+          <span>Best seller</span>
+          <h2>San pham noi bat</h2>
+        </div>
+        <div class="product-grid" id="featuredProducts">
+        </div>
+      </section>
+      <section class="section sale-band" id="flash-sale">
+        <div class="container sale-layout">
+          <div data-aos="fade-right">
+            <span class="eyebrow">Bloom Flash Sale</span>
+            <h2>Deal dep trong hom nay</h2>
+            <p>Dong ho dem nguoc, so luong co han va thanh tien trinh da ban cho tung san pham.</p>
+            <div class="countdown" id="countdown">
+            </div>
+          </div>
+          <div class="sale-products" id="flashProducts" data-aos="fade-left">
+          </div>
+        </div>
+      </section>
+      <section class="section container">
+        <div class="section-heading" data-aos="fade-up">
+          <span>New arrivals</span>
+          <h2>San pham moi</h2>
+        </div>
+        <div class="product-grid compact" id="newProducts">
+        </div>
+      </section>
+      <section class="section container">
+        <div class="combo-grid">
+          <article class="combo-card" data-aos="zoom-in">
+            <span>Combo duong da</span>
+            <h3>Serum + Kem duong + Chong nang</h3>
+            <p>Giam 35% cho routine sang da va phuc hoi hang rao am.</p>
+            <a class="btn primary ripple" href="html/san-pham.html?category=Combo">Mua combo</a>
+          </article>
+          <article class="combo-card lavender" data-aos="zoom-in" data-aos-delay="120">
+            <span>Combo makeup</span>
+            <h3>Son + Cushion + Tay trang</h3>
+            <p>Len tone mem min, lam sach diu nhe sau ca ngay dai.</p>
+            <a class="btn secondary ripple" href="html/san-pham.html?category=Trang diem">Kham pha</a>
+          </article>
+        </div>
+      </section>
+      <section class="section why">
+        <div class="container why-grid" id="whyGrid">
+        </div>
+      </section>
+      <section class="section container testimonials">
+        <div class="section-heading">
+          <span>Khach hang noi gi</span>
+          <h2>Danh gia thuc te</h2>
+        </div>
+        <div class="testimonial-slider" id="testimonialSlider">
+        </div>
+      </section>
+      <section class="section container" id="blog">
+        <div class="section-heading">
+          <span>Beauty blog</span>
+          <h2>Bi quyet cham da</h2>
+        </div>
+        <div class="blog-grid" id="blogGrid">
+        </div>
+      </section>
+      <section class="newsletter">
+        <div class="container newsletter-box">
+          <div>
+            <span class="eyebrow">Bloom Club</span>
+            <h2>Nhan voucher 10% cho don dau tien</h2>
+            <p>Dang ky de nhan tips lam dep, deal moi va qua tang sinh nhat.</p>
+          </div>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Email cua ban" required>
+            <button class="btn primary ripple" type="submit">Dang ky</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="logo" href="index.html">
+            <i class="fa-solid fa-spa"></i>
+            <span>Bloom Beauty</span>
+          </a>
+          <p>Cua hang my pham va cham soc da chinh hang, dong hanh cung ve dep tu nhien cua ban.</p>
+          <div class="socials">
+            <a href="#">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Lien ket nhanh</h4>
+          <a href="html/san-pham.html">San pham</a>
+          <a href="index.html#flash-sale">Khuyen mai</a>
+          <a href="index.html#blog">Blog</a>
+          <a href="html/lien-he.html">Lien he</a>
+        </div>
+        <div>
+          <h4>Chinh sach</h4>
+          <a href="#">Doi tra 7 ngay</a>
+          <a href="#">Van chuyen</a>
+          <a href="#">Bao mat</a>
+          <a href="#">Thanh toan</a>
+        </div>
+        <div>
+          <h4>Lien he</h4>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 12 Nguyen Hue, Quan 1, TP.HCM</p>
+            <p>
+              <i class="fa-solid fa-phone"></i> 0909 888 777</p>
+              <p>
+                <i class="fa-solid fa-envelope"></i> hello@bloombeauty.vn</p>
+              </div>
+            </div>
+            <div class="footer-map">
+              <iframe title="Google Map" loading="lazy" src="https://www.google.com/maps?q=Nguyen%20Hue%20Ho%20Chi%20Minh&output=embed">
+              </iframe>
+            </div>
+            <p class="copyright">Â© 2026 Bloom Beauty. Thiet ke cho do an sinh vien.</p>
+          </footer>
+          <button class="scroll-top" id="scrollTop">
+            <i class="fa-solid fa-arrow-up"></i>
+          </button>
+          <div class="toast-wrap" id="toastWrap">
+          </div>
+          <div class="modal" id="quickViewModal" aria-hidden="true">
+          </div>
+          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+          </script>
+          <script src="js/script.js">
+          </script>
+        </body>
+      </html>
+
+

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiet san pham - Bloom Beauty</title>
+    <title>Gio hang - Bloom Beauty</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -74,79 +74,92 @@
       </nav>
     </header>
     <main>
-      <section class="container detail-page" id="detailPage">
-      </section>
-      <section class="section container">
-        <div class="section-heading">
-          <span>Goi y them</span>
-          <h2>San pham lien quan</h2>
-        </div>
-        <div class="product-grid compact" id="relatedProducts">
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Cart</span>
+          <h1>Gio hang cua ban</h1>
         </div>
       </section>
-    </main>
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <a class="logo" href="../index.html">
-            <i class="fa-solid fa-spa"></i>
-            <span>Bloom Beauty</span>
-          </a>
-          <p>Cua hang my pham va cham soc da chinh hang, dong hanh cung ve dep tu nhien cua ban.</p>
-          <div class="socials">
-            <a href="#">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
-          </div>
+      <section class="container cart-layout">
+        <div id="cartItems">
         </div>
-        <div>
-          <h4>Lien ket nhanh</h4>
-          <a href="../html/san-pham.html">San pham</a>
-          <a href="../index.html#flash-sale">Khuyen mai</a>
-          <a href="../index.html#blog">Blog</a>
-          <a href="../html/lien-he.html">Lien he</a>
-        </div>
-        <div>
-          <h4>Chinh sach</h4>
-          <a href="#">Doi tra 7 ngay</a>
-          <a href="#">Van chuyen</a>
-          <a href="#">Bao mat</a>
-          <a href="#">Thanh toan</a>
-        </div>
-        <div>
-          <h4>Lien he</h4>
+        <aside class="summary">
+          <h3>Tong don hang</h3>
+          <p>Tam tinh <strong id="subtotal">0d</strong>
+        </p>
+        <label>Voucher<input id="voucherInput" placeholder="BLOOM10">
+        </label>
+        <button class="btn secondary" id="applyVoucher">Ap dung</button>
+        <p>Giam gia <strong id="discount">0d</strong>
+      </p>
+      <h3>Tong cong <span id="grandTotal">0d</span>
+    </h3>
+    <a class="btn primary" href="thanh-toan.html">Thanh toan</a>
+  </aside>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo" href="../index.html">
+        <i class="fa-solid fa-spa"></i>
+        <span>Bloom Beauty</span>
+      </a>
+      <p>Cua hang my pham va cham soc da chinh hang, dong hanh cung ve dep tu nhien cua ban.</p>
+      <div class="socials">
+        <a href="#">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>Lien ket nhanh</h4>
+      <a href="../html/san-pham.html">San pham</a>
+      <a href="../index.html#flash-sale">Khuyen mai</a>
+      <a href="../index.html#blog">Blog</a>
+      <a href="../html/lien-he.html">Lien he</a>
+    </div>
+    <div>
+      <h4>Chinh sach</h4>
+      <a href="#">Doi tra 7 ngay</a>
+      <a href="#">Van chuyen</a>
+      <a href="#">Bao mat</a>
+      <a href="#">Thanh toan</a>
+    </div>
+    <div>
+      <h4>Lien he</h4>
+      <p>
+        <i class="fa-solid fa-location-dot"></i> 12 Nguyen Hue, Quan 1, TP.HCM</p>
+        <p>
+          <i class="fa-solid fa-phone"></i> 0909 888 777</p>
           <p>
-            <i class="fa-solid fa-location-dot"></i> 12 Nguyen Hue, Quan 1, TP.HCM</p>
-            <p>
-              <i class="fa-solid fa-phone"></i> 0909 888 777</p>
-              <p>
-                <i class="fa-solid fa-envelope"></i> hello@bloombeauty.vn</p>
-              </div>
-            </div>
-            <div class="footer-map">
-              <iframe title="Google Map" loading="lazy" src="https://www.google.com/maps?q=Nguyen%20Hue%20Ho%20Chi%20Minh&output=embed">
-              </iframe>
-            </div>
-            <p class="copyright">Â© 2026 Bloom Beauty. Thiet ke cho do an sinh vien.</p>
-          </footer>
-          <button class="scroll-top" id="scrollTop">
-            <i class="fa-solid fa-arrow-up"></i>
-          </button>
-          <div class="toast-wrap" id="toastWrap">
+            <i class="fa-solid fa-envelope"></i> hello@bloombeauty.vn</p>
           </div>
-          <div class="modal" id="quickViewModal" aria-hidden="true">
-          </div>
-          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-          </script>
-          <script src="../js/script.js">
-          </script>
-        </body>
-      </html>
+        </div>
+        <div class="footer-map">
+          <iframe title="Google Map" loading="lazy" src="https://www.google.com/maps?q=Nguyen%20Hue%20Ho%20Chi%20Minh&output=embed">
+          </iframe>
+        </div>
+        <p class="copyright">Â© 2026 Bloom Beauty. Thiet ke cho do an sinh vien.</p>
+      </footer>
+      <button class="scroll-top" id="scrollTop">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+      <div class="toast-wrap" id="toastWrap">
+      </div>
+      <div class="modal" id="quickViewModal" aria-hidden="true">
+      </div>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+      </script>
+      <script src="../js/script.js">
+      </script>
+    </body>
+  </html>
 
 

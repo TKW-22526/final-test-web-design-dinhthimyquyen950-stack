@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiet san pham - Bloom Beauty</title>
+    <title>Thanh toan - Bloom Beauty</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -74,15 +74,36 @@
       </nav>
     </header>
     <main>
-      <section class="container detail-page" id="detailPage">
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Checkout</span>
+          <h1>Thong tin thanh toan</h1>
+        </div>
       </section>
-      <section class="section container">
-        <div class="section-heading">
-          <span>Goi y them</span>
-          <h2>San pham lien quan</h2>
-        </div>
-        <div class="product-grid compact" id="relatedProducts">
-        </div>
+      <section class="container form-layout">
+        <form class="panel" id="checkoutForm">
+          <label>Ho ten<input name="name" required>
+          </label>
+          <label>SDT<input name="phone" required pattern="[0-9]{9,11}">
+          </label>
+          <label>Email<input name="email" type="email" required>
+          </label>
+          <label>Dia chi<textarea name="address" required>
+          </textarea>
+        </label>
+        <label>Ghi chu<textarea name="note">
+        </textarea>
+      </label>
+      <div class="radio-row">
+        <label>
+          <input type="radio" name="payment" value="COD" checked> COD</label>
+          <label>
+            <input type="radio" name="payment" value="Chuyen khoan"> Chuyen khoan</label>
+          </div>
+          <button class="btn primary" type="submit">Dat hang</button>
+        </form>
+        <aside class="summary" id="checkoutSummary">
+        </aside>
       </section>
     </main>
     <footer class="site-footer">

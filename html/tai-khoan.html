@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiet san pham - Bloom Beauty</title>
+    <title>Tai khoan - Bloom Beauty</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -74,14 +74,24 @@
       </nav>
     </header>
     <main>
-      <section class="container detail-page" id="detailPage">
-      </section>
-      <section class="section container">
-        <div class="section-heading">
-          <span>Goi y them</span>
-          <h2>San pham lien quan</h2>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Account</span>
+          <h1>Tai khoan Bloom</h1>
         </div>
-        <div class="product-grid compact" id="relatedProducts">
+      </section>
+      <section class="container form-layout">
+        <form class="panel" id="loginForm">
+          <h3>Dang nhap</h3>
+          <label>Email<input type="email" required>
+          </label>
+          <label>Mat khau<input type="password" minlength="6" required>
+          </label>
+          <button class="btn primary" type="submit">Dang nhap</button>
+        </form>
+        <div class="panel">
+          <h3>Quyen loi thanh vien</h3>
+          <p>Tich diem, luu wishlist, nhan voucher sinh nhat va theo doi lich su don hang.</p>
         </div>
       </section>
     </main>
