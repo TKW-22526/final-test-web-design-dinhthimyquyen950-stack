@@ -1,82 +1,80 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
   <head>
+    <!-- Khai báo bảng mã UTF-8 để hiển thị tiếng Việt có dấu. -->
     <meta charset="UTF-8">
+    <!-- Giúp giao diện co giãn đúng trên điện thoại, máy tính bảng và desktop. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tiêu đề hiển thị trên tab trình duyệt. -->
     <title>Bloom Beauty - Mỹ phẩm & chăm sóc da chính hãng</title>
+    <!-- Tăng tốc kết nối tới Google Fonts. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Import bộ font chính của website. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Import icon Font Awesome. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Import hiệu ứng cuộn AOS. -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Kết nối file CSS chính của dự án. -->
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <!-- Màn hình chờ trong lúc website tải. -->
     <div class="loader" id="loader">
       <div class="loader-ring"></div>
       <span>Bloom Beauty</span>
     </div>
+
+    <!-- Header chứa thông báo, menu, tìm kiếm và các nút thao tác nhanh. -->
     <header class="site-header" id="siteHeader">
       <div class="topbar">Freeship từ 499K - Hàng chính hãng 100% - Đổi trả trong 7 ngày</div>
       <nav class="navbar container">
-        <a class="logo" href="index.html">
+        <a class="logo" href="index.html" aria-label="Bloom Beauty">
           <i class="fa-solid fa-spa"></i>
           <span>Bloom Beauty</span>
         </a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Mo menu">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Mở menu">
           <i class="fa-solid fa-bars"></i>
         </button>
         <ul class="nav-menu" id="navMenu">
-          <li>
-            <a href="index.html">Trang chủ</a>
-          </li>
-          <li>
-            <a href="html/san-pham.html">Sản phẩm</a>
-          </li>
-          <li>
-            <a href="index.html#categories">Danh mục</a>
-          </li>
-          <li>
-            <a href="index.html#flash-sale">Khuyến mãi</a>
-          </li>
-          <li>
-            <a href="index.html#blog">Blog</a>
-          </li>
-          <li>
-            <a href="html/gioi-thieu.html">Giới thiệu</a>
-          </li>
-          <li>
-            <a href="html/lien-he.html">Liên hệ</a>
-          </li>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="html/san-pham.html">Sản phẩm</a></li>
+          <li><a href="#categories">Danh mục</a></li>
+          <li><a href="#flash-sale">Khuyến mãi</a></li>
+          <li><a href="html/gioi-thieu.html">Giới thiệu</a></li>
+          <li><a href="html/lien-he.html">Liên hệ</a></li>
         </ul>
         <form class="search-box" data-search-form>
-          <input type="search" placeholder="Tim serum, son, kem duong..." data-search-input>
-          <button type="submit">
+          <input type="search" placeholder="Tìm serum, son, kem dưỡng..." data-search-input>
+          <button type="submit" aria-label="Tìm kiếm">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
         <div class="header-actions">
-          <button class="icon-btn" id="darkModeToggle" title="Dark mode">
+          <button class="icon-btn" id="darkModeToggle" type="button" title="Đổi giao diện sáng/tối">
             <i class="fa-solid fa-moon"></i>
           </button>
-          <a class="icon-btn" href="html/tai-khoan.html" title="Tai khoan">
+          <a class="icon-btn" href="html/tai-khoan.html" title="Tài khoản">
             <i class="fa-regular fa-user"></i>
           </a>
-          <a class="icon-btn count-link" href="html/yeu-thich.html" title="Yeu thich">
+          <a class="icon-btn count-link" href="html/yeu-thich.html" title="Yêu thích">
             <i class="fa-regular fa-heart"></i>
             <span data-wishlist-count>0</span>
           </a>
-          <a class="icon-btn count-link" href="html/gio-hang.html" title="Gio hang">
+          <a class="icon-btn count-link" href="html/gio-hang.html" title="Giỏ hàng">
             <i class="fa-solid fa-bag-shopping"></i>
             <span data-cart-count>0</span>
           </a>
         </div>
       </nav>
     </header>
+
     <main>
+      <!-- Hero slider giới thiệu ưu đãi chính. -->
       <section class="hero">
         <div class="hero-slider" id="heroSlider">
-          <article class="hero-slide active" style="--bg:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1600&q=80')">
+          <article class="hero-slide active" style="--bg: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1600&q=80')">
             <div class="container hero-content" data-aos="fade-up">
               <span class="eyebrow">New season glow</span>
               <h1>Bloom Beauty</h1>
@@ -87,94 +85,94 @@
               </div>
             </div>
           </article>
-          <article class="hero-slide" style="--bg:url('https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1600&q=80')">
+          <article class="hero-slide" style="--bg: url('https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1600&q=80')">
             <div class="container hero-content">
-              <span class="eyebrow">Flash sale đến nữa đêm</span>
+              <span class="eyebrow">Flash sale đến nửa đêm</span>
               <h1>Routine xinh, giá dịu</h1>
               <p>Giảm tới 45% các combo serum, kem dưỡng và chống nắng được yêu thích nhất.</p>
-              <div class="hero-buttons">n
-                <a class="btn primary ripple" href="#flash-sale">Sản phẩm</a>
+              <div class="hero-buttons">
+                <a class="btn primary ripple" href="#flash-sale">Săn deal</a>
                 <a class="btn ghost ripple" href="html/san-pham.html">Xem sản phẩm</a>
               </div>
             </div>
           </article>
         </div>
-        <div class="slider-dots" id="heroDots">
-        </div>
+        <div class="slider-dots" id="heroDots"></div>
       </section>
+
+      <!-- JS sẽ tự đổ danh mục vào khối này. -->
       <section class="section container" id="categories">
         <div class="section-heading" data-aos="fade-up">
           <span>Danh mục</span>
           <h2>Chọn nhanh theo nhu cầu</h2>
         </div>
-        <div class="category-grid" id="categoryGrid">
-        </div>
+        <div class="category-grid" id="categoryGrid"></div>
       </section>
+
+      <!-- JS sẽ tự đổ sản phẩm nổi bật. -->
       <section class="section container">
         <div class="section-heading" data-aos="fade-up">
           <span>Best seller</span>
           <h2>Sản phẩm nổi bật</h2>
         </div>
-        <div class="product-grid" id="featuredProducts">
-        </div>
+        <div class="product-grid" id="featuredProducts"></div>
       </section>
+
+      <!-- Khu vực flash sale có đồng hồ đếm ngược. -->
       <section class="section sale-band" id="flash-sale">
         <div class="container sale-layout">
           <div data-aos="fade-right">
             <span class="eyebrow">Bloom Flash Sale</span>
             <h2>Deal đẹp trong hôm nay</h2>
-            <p>Đồng hồ đếm ngược, số lượng có hạn và thành tiền trình đã bán cho từng sản phẩm.</p>
-            <div class="countdown" id="countdown">
-            </div>
+            <p>Đồng hồ đếm ngược, số lượng có hạn và tiến độ đã bán cho từng sản phẩm.</p>
+            <div class="countdown" id="countdown"></div>
           </div>
-          <div class="sale-products" id="flashProducts" data-aos="fade-left">
-          </div>
+          <div class="sale-products" id="flashProducts" data-aos="fade-left"></div>
         </div>
       </section>
+
+      <!-- JS sẽ tự đổ sản phẩm mới. -->
       <section class="section container">
         <div class="section-heading" data-aos="fade-up">
           <span>New arrivals</span>
           <h2>Sản phẩm mới</h2>
         </div>
-        <div class="product-grid compact" id="newProducts">
-        </div>
+        <div class="product-grid compact" id="newProducts"></div>
       </section>
+
+      <!-- Hai banner combo để tăng điểm nhấn thị giác. -->
       <section class="section container">
         <div class="combo-grid">
           <article class="combo-card" data-aos="zoom-in">
             <span>Combo dưỡng da</span>
             <h3>Serum + Kem dưỡng + Chống nắng</h3>
-            <p>Giảm 35% cho routine sáng da và phục hồi hàng rào ẩm.
-            <a class="btn primary ripple" href="html/san-pham.html?category=Combo">Mua combo</a>
+            <p>Giảm 35% cho routine sáng da và phục hồi hàng rào ẩm.</p>
+            <a class="btn primary ripple" href="html/san-pham.html?category=Combo%20d%C6%B0%E1%BB%A1ng%20da">Mua combo</a>
           </article>
           <article class="combo-card lavender" data-aos="zoom-in" data-aos-delay="120">
             <span>Combo makeup</span>
             <h3>Son + Cushion + Tẩy trang</h3>
-            <p>Lên tone mềm mại, làm sạch dịu nhẹ sau cả ngày dài.</p>
-            <a class="btn secondary ripple" href="html/san-pham.html?category=Trang diem">Khám phá</a>
+            <p>Lên tông mềm mại, làm sạch dịu nhẹ sau cả ngày dài.</p>
+            <a class="btn secondary ripple" href="html/san-pham.html?category=Combo%20trang%20%C4%91i%E1%BB%83m">Khám phá</a>
           </article>
         </div>
       </section>
+
+      <!-- JS sẽ tự đổ các lợi ích mua hàng. -->
       <section class="section why">
-        <div class="container why-grid" id="whyGrid">
-        </div>
+        <div class="container why-grid" id="whyGrid"></div>
       </section>
+
+      <!-- JS sẽ tự đổ đánh giá khách hàng. -->
       <section class="section container testimonials">
         <div class="section-heading">
           <span>Khách hàng nói gì</span>
-          <h2>Danh giá thực tế</h2>
+          <h2>Đánh giá thực tế</h2>
         </div>
-        <div class="testimonial-slider" id="testimonialSlider">
-        </div>
+        <div class="testimonial-slider" id="testimonialSlider"></div>
       </section>
-      <section class="section container" id="blog">
-        <div class="section-heading">
-          <span>Beauty blog</span>
-          <h2>Bí quyết chăm sóc da</h2>
-        </div>
-        <div class="blog-grid" id="blogGrid">
-        </div>
-      </section>
+
+      <!-- Form đăng ký nhận tin. -->
       <section class="newsletter">
         <div class="container newsletter-box">
           <div>
@@ -189,6 +187,8 @@
         </div>
       </section>
     </main>
+
+    <!-- Footer chứa thông tin thương hiệu, chính sách và liên hệ. -->
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
@@ -198,22 +198,16 @@
           </a>
           <p>Cửa hàng mỹ phẩm và chăm sóc da chính hãng, đồng hành cùng vẻ đẹp tự nhiên của bạn.</p>
           <div class="socials">
-            <a href="#">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
         <div>
           <h4>Liên kết nhanh</h4>
           <a href="html/san-pham.html">Sản phẩm</a>
-          <a href="index.html#flash-sale">Khuyến mãi</a>
-          <a href="index.html#blog">Blog</a>
+          <a href="#flash-sale">Khuyến mãi</a>
+          <a href="#blog">Blog</a>
           <a href="html/lien-he.html">Liên hệ</a>
         </div>
         <div>
@@ -225,32 +219,28 @@
         </div>
         <div>
           <h4>Liên hệ</h4>
-          <p>
-            <i class="fa-solid fa-location-dot"></i> 245 Phạm Ngũ Lão, Phường Long Đức, Tỉnh Vĩnh Long</p>
-            <p>
-              <i class="fa-solid fa-phone"></i> 0862 173 849</p>
-              <p>
-                <i class="fa-solid fa-envelope"></i> hello@bloombeauty.vn</p>
-              </div>
-            </div>
-            <div class="footer-map">
-              <iframe title="Google Map" loading="lazy" src="https://www.google.com/maps?q=Nguyen%20Hue%20Ho%20Chi%20Minh&output=embed">
-              </iframe>
-            </div>
-            <p class="copyright">Â© 2026 Bloom Beauty. Thiết kế cho đồ án sinh viên.</p>
-          </footer>
-          <button class="scroll-top" id="scrollTop">
-            <i class="fa-solid fa-arrow-up"></i>
-          </button>
-          <div class="toast-wrap" id="toastWrap">
-          </div>
-          <div class="modal" id="quickViewModal" aria-hidden="true">
-          </div>
-          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-          </script>
-          <script src="js/script.js">
-          </script>
-        </body>
-      </html>
+          <p><i class="fa-solid fa-location-dot"></i> 245 Phạm Ngũ Lão, Phường Long Đức, Tỉnh Vĩnh Long</p>
+          <p><i class="fa-solid fa-phone"></i> 0862 173 849</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@bloombeauty.vn</p>
+        </div>
+      </div>
+      <div class="footer-map">
+        <iframe title="Google Map" loading="lazy" src="https://www.google.com/maps?q=245%20Pham%20Ngu%20Lao%20Vinh%20Long&output=embed"></iframe>
+      </div>
+      <p class="copyright">© 2026 Bloom Beauty.</p>
+    </footer>
 
-
+    <!-- Nút cuộn lên đầu trang. -->
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Cuộn lên đầu trang">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- Vùng hiển thị thông báo nhanh. -->
+    <div class="toast-wrap" id="toastWrap"></div>
+    <!-- Modal xem nhanh sản phẩm, nội dung được JS tự thêm vào. -->
+    <div class="modal" id="quickViewModal" aria-hidden="true"></div>
+    <!-- Kết nối thư viện AOS. -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Kết nối file JavaScript chính. -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

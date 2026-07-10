@@ -1,152 +1,90 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
   <head>
+    <!-- Khai báo UTF-8 để hỗ trợ tiếng Việt. -->
     <meta charset="UTF-8">
+    <!-- Thiết lập responsive cho trình duyệt. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tiêu đề trang chi tiết sản phẩm. -->
     <title>Chi tiết sản phẩm - Bloom Beauty</title>
+    <!-- Kết nối font và icon dùng chung. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Kết nối CSS chính. -->
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <div class="loader" id="loader">
-      <div class="loader-ring"></div>
-      <span>Bloom Beauty</span>
-    </div>
+    <!-- Màn hình chờ khi tải trang. -->
+    <div class="loader" id="loader"><div class="loader-ring"></div><span>Bloom Beauty</span></div>
+
+    <!-- Header dùng chung. -->
     <header class="site-header" id="siteHeader">
       <div class="topbar">Freeship từ 499K - Hàng chính hãng 100% - Đổi trả trong 7 ngày</div>
       <nav class="navbar container">
-        <a class="logo" href="../index.html">
-          <i class="fa-solid fa-spa"></i>
-          <span>Bloom Beauty</span>
-        </a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Mo menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <a class="logo" href="../index.html"><i class="fa-solid fa-spa"></i><span>Bloom Beauty</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Mở menu"><i class="fa-solid fa-bars"></i></button>
         <ul class="nav-menu" id="navMenu">
-          <li>
-            <a href="../index.html">Trang chủ</a>
-          </li>
-          <li>
-            <a href="../html/san-pham.html">Sản phẩm</a>
-          </li>
-          <li>
-            <a href="../index.html#categories">Danh mục</a>
-          </li>
-          <li>
-            <a href="../index.html#flash-sale">Khuyến mãi</a>
-          </li>
-          <li>
-            <a href="../index.html#blog">Blog</a>
-          </li>
-          <li>
-            <a href="../html/gioi-thieu.html">Giới thiệu</a>
-          </li>
-          <li>
-            <a href="../html/lien-he.html">Liên hệ</a>
-          </li>
+          <li><a href="../index.html">Trang chủ</a></li>
+          <li><a href="san-pham.html">Sản phẩm</a></li>
+          <li><a href="../index.html#categories">Danh mục</a></li>
+          <li><a href="../index.html#flash-sale">Khuyến mãi</a></li>
+          <li><a href="../index.html#blog">Blog</a></li>
+          <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+          <li><a href="lien-he.html">Liên hệ</a></li>
         </ul>
         <form class="search-box" data-search-form>
-          <input type="search" placeholder="Tim serum, son, kem duong..." data-search-input>
-          <button type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
+          <input type="search" placeholder="Tìm serum, son, kem dưỡng..." data-search-input>
+          <button type="submit" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
         <div class="header-actions">
-          <button class="icon-btn" id="darkModeToggle" title="Dark mode">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-          <a class="icon-btn" href="../html/tai-khoan.html" title="Tai khoan">
-            <i class="fa-regular fa-user"></i>
-          </a>
-          <a class="icon-btn count-link" href="../html/yeu-thich.html" title="Yeu thich">
-            <i class="fa-regular fa-heart"></i>
-            <span data-wishlist-count>0</span>
-          </a>
-          <a class="icon-btn count-link" href="../html/gio-hang.html" title="Gio hang">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span data-cart-count>0</span>
-          </a>
+          <button class="icon-btn" id="darkModeToggle" type="button" title="Đổi giao diện sáng/tối"><i class="fa-solid fa-moon"></i></button>
+          <a class="icon-btn" href="tai-khoan.html" title="Tài khoản"><i class="fa-regular fa-user"></i></a>
+          <a class="icon-btn count-link" href="yeu-thich.html" title="Yêu thích"><i class="fa-regular fa-heart"></i><span data-wishlist-count>0</span></a>
+          <a class="icon-btn count-link" href="gio-hang.html" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i><span data-cart-count>0</span></a>
         </div>
       </nav>
     </header>
+
     <main>
-      <section class="container detail-page" id="detailPage">
-      </section>
+      <!-- JS đọc id trên URL và tự đổ thông tin sản phẩm vào đây. -->
+      <section class="container detail-page" id="detailPage"></section>
+      <!-- JS tự đổ sản phẩm liên quan. -->
       <section class="section container">
         <div class="section-heading">
           <span>Gợi ý thêm</span>
           <h2>Sản phẩm liên quan</h2>
         </div>
-        <div class="product-grid compact" id="relatedProducts">
-        </div>
+        <div class="product-grid compact" id="relatedProducts"></div>
       </section>
     </main>
+
+    <!-- Footer dùng chung. -->
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <a class="logo" href="../index.html">
-            <i class="fa-solid fa-spa"></i>
-            <span>Bloom Beauty</span>
-          </a>
+          <a class="logo" href="../index.html"><i class="fa-solid fa-spa"></i><span>Bloom Beauty</span></a>
           <p>Cửa hàng mỹ phẩm và chăm sóc da chính hãng, đồng hành cùng vẻ đẹp tự nhiên của bạn.</p>
           <div class="socials">
-            <a href="#">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
-        <div>
-          <h4>Liên kết nhanh</h4>
-          <a href="../html/san-pham.html">ản phẩm</a>
-          <a href="../index.html#flash-sale">Khuyến mãi</a>
-          <a href="../index.html#blog">Blog</a>
-          <a href="../html/lien-he.html">Lien he</a>
-        </div>
-        <div>
-          <h4>Chính sách</h4>
-          <a href="#">Đổi trả 7 ngày</a>
-          <a href="#">Vận chuyển</a>
-          <a href="#">Bảo mật</a>
-          <a href="#">Thanh toán</a>
-        </div>
-        <div>
-          <h4>Liên hệ</h4>
-          <p>
-            <i class="fa-solid fa-location-dot"></i> 245 Phạm Ngũ Lão, Phường Long Đức, Tỉnh Vĩnh Long</p>
-            <p>
-              <i class="fa-solid fa-phone"></i> 0862 173 </p>
-              <p>
-                <i class="fa-solid fa-envelope"></i> hello@bloombeauty.vn</p>
-              </div>
-            </div>
-            <div class="footer-map">
-              <iframe title="Google Map" loading="lazy" src="https://www.google.com/maps?q=Nguyen%20Hue%20Ho%20Chi%20Minh&output=embed">
-              </iframe>
-            </div>
-            <p class="copyright">Â© 2026 Bloom Beauty. Thiết kế cho đồ án sinh viên.</p>
-          </footer>
-          <button class="scroll-top" id="scrollTop">
-            <i class="fa-solid fa-arrow-up"></i>
-          </button>
-          <div class="toast-wrap" id="toastWrap">
-          </div>
-          <div class="modal" id="quickViewModal" aria-hidden="true">
-          </div>
-          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-          </script>
-          <script src="../js/script.js">
-          </script>
-        </body>
-      </html>
+        <div><h4>Liên kết nhanh</h4><a href="san-pham.html">Sản phẩm</a><a href="../index.html#flash-sale">Khuyến mãi</a><a href="../index.html#blog">Blog</a><a href="lien-he.html">Liên hệ</a></div>
+        <div><h4>Chính sách</h4><a href="#">Đổi trả 7 ngày</a><a href="#">Vận chuyển</a><a href="#">Bảo mật</a><a href="#">Thanh toán</a></div>
+        <div><h4>Liên hệ</h4><p><i class="fa-solid fa-location-dot"></i> 245 Phạm Ngũ Lão, Phường Long Đức, Tỉnh Vĩnh Long</p><p><i class="fa-solid fa-phone"></i> 0862 173 849</p><p><i class="fa-solid fa-envelope"></i> hello@bloombeauty.vn</p></div>
+      </div>
+      <div class="footer-map"><iframe title="Google Map" loading="lazy" src="https://www.google.com/maps?q=245%20Pham%20Ngu%20Lao%20Vinh%20Long&output=embed"></iframe></div>
+      <p class="copyright">© 2026 Bloom Beauty.</p>
+    </footer>
 
-
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Cuộn lên đầu trang"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="toast-wrap" id="toastWrap"></div>
+    <div class="modal" id="quickViewModal" aria-hidden="true"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
