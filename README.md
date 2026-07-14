@@ -72,10 +72,10 @@ https://<ten-tai-khoan>.github.io/<ten-repository>/
 ## 6. Thông tin sinh viên
 
 ```text
-Họ và tên:
-Mã số sinh viên:
-Lớp:
-Tên đề tài: Website bán mỹ phẩm Bloom Beauty
+Họ và tên: Đinh Thị Mỹ Quyên
+Mã số sinh viên: 110125141
+Lớp: DA25TTA
+Tên đề tài: Thiết kế website bán mỹ phẩm Bloom Beauty
 Liên kết GitHub repository:
 Liên kết GitHub Pages:
 ```
