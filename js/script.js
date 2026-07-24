@@ -69,7 +69,7 @@ const products = [
   },
   {
   id: 5,
-  name: 'Sửa rửa mặt COSRX Low pH Good Morning Gel Cleanser',
+  name: 'Sữa rửa mặt COSRX Low pH Good Morning Gel Cleanser',
   category: 'Sữa rửa mặt',
   brand: 'COSRX',
   skin: 'Da dầu, da hỗn hợp, da nhạy cảm',
@@ -309,7 +309,7 @@ const products = [
 },
   {
   id: 20,
-  name: " Nước tẩy trang L'Oréal Paris Micellar Water 3-in-1 Refreshing",
+  name: "Nước tẩy trang L'Oréal Paris Micellar Water 3-in-1 Refreshing",
   category: "Nước tẩy trang",
   brand: "L'Oréal Paris",
   skin: "Mọi loại da, kể cả da nhạy cảm",
@@ -471,7 +471,7 @@ const products = [
 
 {
   id: 30,
-  name: 'Sửa rửa mặt Laneige Water Bank Gentle Gel Cleanser',
+  name: 'Sữa rửa mặt Laneige Water Bank Gentle Gel Cleanser',
   category: 'Sữa rửa mặt',
   brand: 'Laneige',
   skin: 'Mọi loại da, đặc biệt da thường, da khô và da nhạy cảm',
@@ -487,7 +487,7 @@ const products = [
 },
 {
   id: 31,
-  name: 'Sửa rửa mặt TIAM Snail & Azulene Low pH Cleanser',
+  name: 'Sữa rửa mặt TIAM Snail & Azulene Low pH Cleanser',
   category: 'Sữa rửa mặt',
   brand: 'TIAM',
   skin: 'Mọi loại da, đặc biệt da nhạy cảm và da sau mụn',
@@ -631,7 +631,7 @@ const products = [
 },
 {
   id: 40,
-  name: ' Sửa rửa mặt Innisfree Green Tea Amino Hydrating Cleansing Foam',
+  name: 'Sữa rửa mặt Innisfree Green Tea Amino Hydrating Cleansing Foam',
   category: 'Sữa rửa mặt',
   brand: 'Innisfree',
   skin: 'Mọi loại da, đặc biệt da thường và da khô',
@@ -875,11 +875,14 @@ function initCommon() {
 
   darkModeToggle?.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    localStorage.setItem('bloomDark', document.body.classList.contains('dark'));
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('bloomDark', isDark);
+    darkModeToggle.querySelector('i').className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
   });
 
   if (localStorage.getItem('bloomDark') === 'true') {
     document.body.classList.add('dark');
+    darkModeToggle.querySelector('i').className = 'fa-solid fa-sun';
   }
 
   document.querySelectorAll('[data-search-form]').forEach((form) => {
@@ -961,8 +964,8 @@ function initHome() {
     flashProducts.innerHTML = products.slice(0, 2).map((product) => `
       <div>
         ${productCard(product)}
-        <div class="progress"><span style="width: ${product.sold}%"></span></div>
-        <small>Đã bán ${product.sold}%</small>
+        <div class="progress"><span style="width: ${Math.min(100, Math.round(product.sold * 100 / 500))}%"></span></div>
+        <small>Đã bán ${Math.min(100, Math.round(product.sold * 100 / 500))}%</small>
       </div>
     `).join('');
   }
@@ -1020,6 +1023,8 @@ function initHome() {
       `).join('');
     }, 1000);
   }
+
+
 
   byId('newsletterForm')?.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -1079,16 +1084,29 @@ function initShop() {
     state.page = Math.min(state.page, totalPages);
 
     resultCount.textContent = `${filteredProducts.length} sản phẩm`;
-    list.innerHTML = filteredProducts
-      .slice((state.page - 1) * perPage, state.page * perPage)
-      .map(productCard)
-      .join('') || '<div class="empty">Không tìm thấy sản phẩm phù hợp.</div>';
 
-    pagination.innerHTML = Array.from({ length: totalPages }, (_, index) => `
-      <button class="${state.page === index + 1 ? 'active' : ''}" type="button" data-page="${index + 1}">
-        ${index + 1}
-      </button>
-    `).join('');
+    if (filteredProducts.length === 0) {
+      list.innerHTML = `
+        <div class="empty">
+          <i class="fa-solid fa-search"></i>
+          <h3>Không tìm thấy sản phẩm</h3>
+          <p>Thử thay đổi bộ lọc hoặc từ khóa tìm kiếm để có kết quả phù hợp hơn.</p>
+        </div>
+      `;
+    } else {
+      list.innerHTML = filteredProducts
+        .slice((state.page - 1) * perPage, state.page * perPage)
+        .map(productCard)
+        .join('');
+    }
+
+    pagination.innerHTML = totalPages > 1
+      ? Array.from({ length: totalPages }, (_, index) => `
+        <button class="${state.page === index + 1 ? 'active' : ''}" type="button" data-page="${index + 1}">
+          ${index + 1}
+        </button>
+      `).join('')
+      : '';
   }
 
   document.querySelectorAll('.filters input, .filters select, #sortProducts').forEach((item) => {
@@ -1110,7 +1128,7 @@ function initShop() {
     filterCategory.value = 'all';
     filterBrand.value = 'all';
     filterSkin.value = 'all';
-    filterPrice.value = 900000;
+    filterPrice.value = filterPrice.max;
     render();
   });
 
@@ -1144,10 +1162,6 @@ function initDetail() {
 
   // Đường dẫn ảnh (giữ nguyên link đầy đủ, chỉ cộng rootPrefix cho ảnh nội bộ)
   const image = resolveImage(product.img);
-
-  // Sản phẩm liên quan
-  const related1 = products[(product.id) % products.length];
-  const related2 = products[(product.id + 1) % products.length];
 
   detailPage.innerHTML = `
     <div class="detail-gallery">
@@ -1240,7 +1254,7 @@ if (relatedProducts) {
 
     relatedProducts.innerHTML = sameCategory.length
         ? sameCategory.map(item => productCard(item)).join("")
-        : '<p class="empty">Chưa có sản phẩm liên quan khác trong danh mục này.</p>';
+        : '<div class="empty"><i class="fa-regular fa-folder-open"></i><h3>Chưa có sản phẩm liên quan</h3></div>';
 
 }
 }
@@ -1277,7 +1291,7 @@ function initCart() {
           </div>
         </div>
       `).join('')
-      : '<div class="empty">Giỏ hàng đang trống.</div>';
+      : '<div class="empty"><i class="fa-solid fa-bag-shopping"></i><h3>Giỏ hàng trống</h3><p>Hãy thêm sản phẩm vào giỏ hàng để tiếp tục mua sắm.</p></div>';
 
     const subtotal = rows.reduce((sum, product) => sum + product.price * product.qty, 0);
     const discount = subtotal * discountRate;
@@ -1289,19 +1303,21 @@ function initCart() {
   }
 
   wrapper.addEventListener('click', (event) => {
+    const btn = event.target.closest('[data-inc],[data-dec],[data-rm]');
+    if (!btn) return;
     let cart = getStorage('bloomCart');
 
-    if (event.target.dataset.inc) {
-      cart.find((item) => item.id === Number(event.target.dataset.inc)).qty += 1;
+    if (btn.dataset.inc) {
+      cart.find((item) => item.id === Number(btn.dataset.inc)).qty += 1;
     }
 
-    if (event.target.dataset.dec) {
-      const item = cart.find((cartItem) => cartItem.id === Number(event.target.dataset.dec));
+    if (btn.dataset.dec) {
+      const item = cart.find((cartItem) => cartItem.id === Number(btn.dataset.dec));
       item.qty = Math.max(1, item.qty - 1);
     }
 
-    if (event.target.dataset.rm) {
-      cart = cart.filter((item) => item.id !== Number(event.target.dataset.rm));
+    if (btn.dataset.rm) {
+      cart = cart.filter((item) => item.id !== Number(btn.dataset.rm));
     }
 
     setStorage('bloomCart', cart);
@@ -1357,7 +1373,7 @@ function initWishlist() {
   wishlistList.innerHTML = products
     .filter((product) => getStorage('bloomWish').includes(product.id))
     .map(productCard)
-    .join('') || '<div class="empty">Bạn chưa có sản phẩm yêu thích.</div>';
+    .join('') || '<div class="empty"><i class="fa-regular fa-heart"></i><h3>Chưa có sản phẩm yêu thích</h3><p>Hãy khám phá các sản phẩm và thêm vào danh sách yêu thích nhé!</p></div>';
 }
 
 // Khởi tạo form liên hệ và form đăng nhập mẫu.
